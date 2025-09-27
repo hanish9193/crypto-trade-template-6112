@@ -3,11 +3,11 @@ import { ArrowRight, Command } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
-import { PricingSection } from "@/components/pricing/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import SplineModel from "@/components/SplineModel";
 
 const Index = () => {
   return (
@@ -66,7 +66,7 @@ const Index = () => {
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
             <Button size="lg" className="button-gradient" asChild>
-              <a href="/code-auth">Try Code Authenticator</a>
+              <a href="/code-auth">Try CodeInspector</a>
             </Button>
             <Button size="lg" variant="link" className="text-white" asChild>
               <a href="/code-auth?tab=about">
@@ -83,11 +83,7 @@ const Index = () => {
           className="relative mx-auto max-w-5xl mt-20"
         >
           <div className="glass rounded-xl overflow-hidden">
-            <img
-              src="/lovable-uploads/c32c6788-5e4a-4fee-afee-604b03113c7f.png"
-              alt="CodeAuthenticator Dashboard"
-              className="w-full h-auto"
-            />
+            <SplineModel />
           </div>
         </motion.div>
       </motion.section>
@@ -98,11 +94,6 @@ const Index = () => {
       {/* Features Section */}
       <div id="features" className="bg-black">
         <FeaturesSection />
-      </div>
-
-      {/* Pricing Section */}
-      <div id="pricing" className="bg-black">
-        <PricingSection />
       </div>
 
       {/* Testimonials Section */}

@@ -61,7 +61,7 @@ const CodeAuthenticator = () => {
           </motion.div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
-            Code Authenticator
+            CodeInspector
           </h1>
           
           <motion.p 
