@@ -1,0 +1,202 @@
+Create a modern, professional web application frontend for an AI Code Detection and Humanization system. This is a tool that helps identify AI-generated code and can also transform AI code to appear human-written.
+APPLICATION OVERVIEW:
+Build a sleek, responsive web interface for developers, educators, and hiring managers to analyze code authenticity and understand AI vs human coding patterns.
+DESIGN REQUIREMENTS:
+Overall Design Theme:
+
+Modern, professional developer-focused design
+Dark/light theme toggle
+Clean, minimal interface with subtle animations
+Color scheme: Primary blues/teals with accent oranges for alerts
+Typography: Clean, code-friendly fonts (Fira Code for code, Inter for UI)
+
+MAIN LAYOUT STRUCTURE:
+1. HEADER/NAVIGATION:
+
+Logo: "CodeAuthenticator" or "AI Code Detective"
+Navigation tabs: "Detect", "Humanize", "Batch Analysis", "About"
+Theme toggle (dark/light mode)
+User account dropdown (login/signup placeholders)
+
+2. MAIN CONTENT AREA - TAB STRUCTURE:
+TAB 1: AI CODE DETECTION
+Left Panel (Code Input):
+
+Large code editor with syntax highlighting
+Language selector dropdown (Python, JavaScript, Java, C++, Go)
+File upload button ("Upload .py, .js, .java files")
+Example code snippets dropdown ("Try Sample Code")
+Clear/Reset button
+Character/line count indicator
+
+Right Panel (Analysis Results):
+
+AI Probability gauge/meter (0-100% with color coding):
+
+0-30%: Green (Likely Human)
+30-70%: Yellow (Uncertain - Human Review Needed)
+70-100%: Red (Likely AI Generated)
+
+
+Confidence score bar
+"Human Review Recommended" banner when applicable
+Detailed feature breakdown with expandable sections:
+
+Stylistic Analysis (formatting consistency, naming patterns)
+Structural Analysis (complexity metrics, code patterns)
+Statistical Analysis (perplexity, burstiness scores)
+
+
+Processing time indicator
+Export results button (PDF/JSON)
+
+TAB 2: CODE HUMANIZATION
+Top Section:
+
+Input code editor (similar to detection tab)
+"Humanize Code" button (prominent, centered)
+Humanization strength slider (Light, Medium, Aggressive)
+"Preserve functionality" checkbox (always checked, grayed out)
+
+Bottom Section - Side by Side Comparison:
+
+Left: "Original AI Code" panel
+Right: "Humanized Code" panel
+Diff highlighting showing changes
+Download buttons for both versions
+"Test Humanized Code" button that runs it through the detector
+
+TAB 3: BATCH ANALYSIS
+
+File/folder upload area (drag & drop zone)
+Progress bar for batch processing
+Results table showing:
+
+File name
+AI probability
+Processing status
+Quick actions (view details, re-analyze)
+
+
+Export all results button
+Summary statistics dashboard
+
+TAB 4: ABOUT/DOCUMENTATION
+
+How it works explanation
+Accuracy metrics and benchmarks
+Limitations and ethical considerations
+API documentation preview
+Contact/feedback form
+
+INTERACTIVE ELEMENTS:
+Real-time Features:
+
+Auto-save code as user types
+Real-time character counting
+Syntax error highlighting
+Loading spinners with progress indicators
+Toast notifications for completed analyses
+
+Visualization Components:
+
+Circular progress indicators for AI probability
+Bar charts for feature breakdowns
+Heatmap overlay on code showing "suspicious" sections
+Timeline view for batch analysis progress
+
+RESPONSIVE DESIGN:
+
+Mobile-friendly layout that stacks panels vertically on small screens
+Tablet view with optimized spacing
+Desktop view with full side-by-side panels
+
+SPECIFIC UI COMPONENTS TO BUILD:
+1. Code Editor Component:
+
+Syntax highlighting for multiple languages
+Line numbers
+Collapsible sections
+Search/replace functionality
+Copy to clipboard button
+Full-screen toggle
+
+2. Analysis Results Dashboard:
+
+Animated gauge for AI probability
+Collapsible feature sections with icons
+Progress bars for individual metrics
+Tooltip explanations for technical terms
+Color-coded severity indicators
+
+3. File Upload Components:
+
+Drag-and-drop zones with hover effects
+File type validation
+Upload progress indicators
+File preview thumbnails
+
+4. Comparison View:
+
+Side-by-side code panels
+Synchronized scrolling
+Difference highlighting
+Toggle between unified/split view
+
+TECHNICAL SPECIFICATIONS:
+Framework: React with modern hooks
+Styling: Tailwind CSS for responsive design
+Code Editor: Monaco Editor or CodeMirror integration
+Charts/Visualizations: Recharts or Chart.js
+Icons: Lucide React or Heroicons
+Animations: Framer Motion for smooth transitions
+STATE MANAGEMENT:
+
+React Context for theme management
+Local state for form inputs and analysis results
+Session storage for preserving user work
+
+API INTEGRATION PLACEHOLDERS:
+javascript// Mock API calls to be replaced with real backend
+const analyzeCode = async (code, language) => {
+  // POST to /api/detect
+  return mockAnalysisResult;
+};
+
+const humanizeCode = async (code, strength) => {
+  // POST to /api/humanize  
+  return mockHumanizedResult;
+};
+ACCESSIBILITY FEATURES:
+
+Keyboard navigation support
+Screen reader friendly
+High contrast mode option
+Focus indicators
+ARIA labels for complex components
+
+SAMPLE MOCK DATA:
+Include realistic sample analysis results showing:
+
+AI probability: 87%
+Confidence: High
+Features detected: "Generic variable names", "Perfect formatting consistency", "Tutorial-style comments"
+Processing time: 2.3s
+
+PROFESSIONAL FEATURES:
+
+Export functionality (PDF reports, JSON data)
+Shareable analysis links
+Comparison history
+User preferences persistence
+Professional color-coded results
+
+ERROR HANDLING:
+
+Graceful error states with helpful messages
+Retry mechanisms for failed analyses
+Input validation with clear feedback
+Network error handling
+
+Build this as a production-ready frontend that feels professional enough for enterprise use while being intuitive for individual developers. Focus on clean design, smooth interactions, and clear presentation of complex technical information.
+The interface should inspire confidence in the analysis results while being transparent about limitations and the need for human judgment in borderline cases.
