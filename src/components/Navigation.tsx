@@ -40,9 +40,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
-    { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
-    { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
+    { name: "Detect", href: "/code-auth" },
+    { name: "Humanize", href: "/code-auth" },
+    { name: "Batch Analysis", href: "/code-auth" },
+    { name: "About", href: "#features", onClick: () => scrollToSection('features') },
   ];
 
   return (
@@ -57,7 +58,7 @@ const Navigation = () => {
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
             <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">CryptoTrade</span>
+            <span className="font-bold text-base">CodeAuthenticator</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -78,11 +79,11 @@ const Navigation = () => {
               </a>
             ))}
             <Button 
-              onClick={() => scrollToSection('cta')}
               size="sm"
               className="button-gradient"
+              asChild
             >
-              Start Trading
+              <a href="/code-auth">Try Now</a>
             </Button>
           </div>
 
@@ -113,13 +114,11 @@ const Navigation = () => {
                     </a>
                   ))}
                   <Button 
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
-                    }}
                     className="button-gradient mt-4"
+                    asChild
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Start Trading
+                    <a href="/code-auth">Try Now</a>
                   </Button>
                 </div>
               </SheetContent>
