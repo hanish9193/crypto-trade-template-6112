@@ -68,8 +68,10 @@ const Index = () => {
             <Button size="lg" className="button-gradient" asChild>
               <a href="/code-auth">Try Code Authenticator</a>
             </Button>
-            <Button size="lg" variant="link" className="text-white">
-              Learn More <ArrowRight className="ml-2 w-4 h-4" />
+            <Button size="lg" variant="link" className="text-white" asChild>
+              <a href="/code-auth?tab=about">
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
             </Button>
           </motion.div>
         </div>

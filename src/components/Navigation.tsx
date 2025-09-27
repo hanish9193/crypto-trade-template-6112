@@ -40,10 +40,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Detect", href: "/code-auth" },
-    { name: "Humanize", href: "/code-auth" },
-    { name: "Batch Analysis", href: "/code-auth" },
-    { name: "About", href: "#features", onClick: () => scrollToSection('features') },
+    { name: "Detect", href: "/code-auth?tab=detect" },
+    { name: "Humanize", href: "/code-auth?tab=humanize" },
+    { name: "Batch Analysis", href: "/code-auth?tab=batch" },
+    { name: "About", href: "/code-auth?tab=about" },
   ];
 
   return (
@@ -67,12 +67,6 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.onClick) {
-                    item.onClick();
-                  }
-                }}
                 className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 {item.name}
@@ -102,13 +96,7 @@ const Navigation = () => {
                       key={item.name}
                       href={item.href}
                       className="text-lg text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsMobileMenuOpen(false);
-                        if (item.onClick) {
-                          item.onClick();
-                        }
-                      }}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
                     </a>

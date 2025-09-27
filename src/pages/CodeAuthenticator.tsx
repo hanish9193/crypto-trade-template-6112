@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Navigation from "@/components/Navigation";
@@ -11,6 +11,23 @@ import { Shield, Bot, FileSearch, Info } from "lucide-react";
 
 const CodeAuthenticator = () => {
   const [activeTab, setActiveTab] = useState("detect");
+
+  // Handle tab deep-linking from URL parameters
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    if (tabParam && ['detect', 'humanize', 'batch', 'about'].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, []);
+
+  // Update URL when tab changes
+  const handleTabChange = (newTab: string) => {
+    setActiveTab(newTab);
+    const url = new URL(window.location.href);
+    url.searchParams.set('tab', newTab);
+    window.history.replaceState({}, '', url.toString());
+  };
 
   const tabItems = [
     { id: "detect", label: "Detect", icon: Shield },
@@ -67,7 +84,7 @@ const CodeAuthenticator = () => {
         className="container px-4 pb-20"
       >
         <div className="max-w-7xl mx-auto">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
             <TabsList className="grid w-full grid-cols-4 glass mb-8">
               {tabItems.map((tab) => {
                 const Icon = tab.icon;
