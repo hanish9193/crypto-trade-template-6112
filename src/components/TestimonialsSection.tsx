@@ -25,15 +25,15 @@ const testimonials = [
   },
   {
     name: "Emily Zhang",
-    role: "DeFi Developer",
+    role: "Full Stack Developer",
     image: "https://avatars.githubusercontent.com/u/4567890?v=4",
-    content: "We've seen remarkable improvements in our trading efficiency since switching to CryptoTrade. The smart order routing and liquidity aggregation are particularly impressive."
+    content: "We've seen remarkable improvements in our code quality since switching to CodeInspector. The AI detection accuracy and batch analysis features are particularly impressive."
   },
   {
     name: "James Rodriguez",
-    role: "Crypto Security Expert",
+    role: "Security Engineer",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
-    content: "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the crypto industry needed."
+    content: "The detection accuracy is robust and the regular updates keep us ahead of emerging AI threats. It's exactly what the development industry needed."
   },
   {
     name: "Lisa Thompson",

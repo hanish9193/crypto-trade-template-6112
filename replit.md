@@ -1,11 +1,12 @@
-# CryptoTrade Landing Page
+# CodeInspector Landing Page
 
 ## Project Overview
-This is a React frontend application built with Vite, TypeScript, and Tailwind CSS. It's a cryptocurrency trading platform landing page featuring:
+This is a React frontend application built with Vite, TypeScript, and Tailwind CSS. It's an AI code detection and humanization platform featuring:
 - Modern UI with shadcn/ui components
-- Code authentication features
+- AI code detection and humanization features
 - Responsive design with dark/light mode support
-- Landing page with features, pricing, and testimonials sections
+- Landing page with features and testimonials sections
+- 3D Spline model integration
 
 ## Technology Stack
 - **Frontend**: React 18 + TypeScript
@@ -50,6 +51,13 @@ src/
   - Added production start script
   - Set up deployment configuration for autoscale
   - Verified build process works correctly
+- **2025-09-27**: Complete transformation to CodeInspector
+  - Removed pricing section from landing page
+  - Changed all "traders" references to "coders" 
+  - Updated branding from "CodeAuthenticator" to "CodeInspector"
+  - Replaced hero image with 3D Spline model integration
+  - Updated footer and testimonials content
+  - Preserved all animations and styling
 
 ## Replit Environment
 - Workflow configured for frontend on port 5000
