@@ -35,7 +35,7 @@ const SplineModel = () => {
 
   return (
     <div 
-      className="w-full h-[400px] md:h-[600px] relative border border-gray-700 rounded-lg overflow-hidden"
+      className="w-full h-[400px] md:h-[600px] relative rounded-lg overflow-hidden"
       onWheelCapture={(e) => {
         // Intercept wheel events BEFORE they reach Spline canvas to prevent zoom
         e.preventDefault();
@@ -59,7 +59,8 @@ const SplineModel = () => {
           }}
           onError={handleError}
         />
-        {/* Full-width black overlay to cover watermark seamlessly */}
+        {/* Black overlay bars at top and bottom for symmetrical appearance */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-black z-10"></div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-black z-10"></div>
       </div>
     </div>
