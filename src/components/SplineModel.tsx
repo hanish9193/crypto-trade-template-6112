@@ -22,14 +22,34 @@ const SplineModel = () => {
   }
 
   return (
-    <div className="w-full h-[400px] md:h-[600px] relative overflow-hidden">
-      <Spline
-        scene="https://prod.spline.design/52fHeNdbT3Cp05k1/scene.splinecode"
-        style={{ width: '100%', height: '100%' }}
-        onError={handleError}
-      />
-      {/* Black overlay to cover watermark at bottom right */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 bg-black z-10"></div>
+    <div 
+      className="w-full h-[400px] md:h-[600px] relative border border-gray-700 rounded-lg overflow-hidden"
+      onWheelCapture={(e) => {
+        // Intercept wheel events BEFORE they reach Spline canvas to prevent zoom
+        e.preventDefault();
+        e.stopPropagation();
+      }}
+      onTouchMoveCapture={(e) => {
+        // Intercept touch events BEFORE they reach Spline to prevent touch zoom
+        if (e.touches.length === 1) {
+          // Only prevent single-touch scroll, allow multi-touch gestures for interaction
+          e.preventDefault();
+        }
+      }}
+      style={{ touchAction: 'pan-x pan-y' }}
+    >
+      <div className="w-full h-full relative">
+        <Spline
+          scene="https://prod.spline.design/52fHeNdbT3Cp05k1/scene.splinecode"
+          style={{ 
+            width: '100%', 
+            height: '100%'
+          }}
+          onError={handleError}
+        />
+        {/* Black overlay to cover watermark completely */}
+        <div className="absolute bottom-0 right-0 w-48 h-20 bg-black z-10"></div>
+      </div>
     </div>
   );
 };
