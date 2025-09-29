@@ -40,6 +40,7 @@ const Navigation = () => {
   };
 
   const navItems = [
+    { name: "Home", href: "/" },
     { name: "Detect", href: "/code-auth?tab=detect" },
     { name: "Humanize", href: "/code-auth?tab=humanize" },
     { name: "Batch Analysis", href: "/code-auth?tab=batch" },

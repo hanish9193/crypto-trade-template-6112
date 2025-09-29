@@ -28,6 +28,8 @@ const SplineModel = () => {
         style={{ width: '100%', height: '100%' }}
         onError={handleError}
       />
+      {/* Black overlay to cover watermark at bottom right */}
+      <div className="absolute bottom-0 left-0 right-0 h-6 bg-black z-10"></div>
     </div>
   );
 };
