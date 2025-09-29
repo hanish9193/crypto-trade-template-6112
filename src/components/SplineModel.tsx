@@ -1,6 +1,18 @@
-import Spline from '@splinetool/react-spline';
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import { Shield } from 'lucide-react';
+
+// Declare the spline-viewer web component for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'spline-viewer': {
+        url: string;
+        style?: CSSProperties;
+        onError?: () => void;
+      };
+    }
+  }
+}
 
 const SplineModel = () => {
   const [hasError, setHasError] = useState(false);
@@ -39,16 +51,16 @@ const SplineModel = () => {
       style={{ touchAction: 'pan-x pan-y' }}
     >
       <div className="w-full h-full relative">
-        <Spline
-          scene="https://prod.spline.design/52fHeNdbT3Cp05k1/scene.splinecode"
+        <spline-viewer 
+          url="https://prod.spline.design/52fHeNdbT3Cp05k1/scene.splinecode"
           style={{ 
             width: '100%', 
             height: '100%'
           }}
           onError={handleError}
         />
-        {/* Black overlay to cover watermark completely */}
-        <div className="absolute bottom-0 right-0 w-48 h-20 bg-black z-10"></div>
+        {/* Full-width black overlay to cover watermark seamlessly */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-black z-10"></div>
       </div>
     </div>
   );
