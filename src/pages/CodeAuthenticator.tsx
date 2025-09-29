@@ -7,6 +7,7 @@ import { DetectTab } from "@/components/code-auth/DetectTab";
 import { HumanizeTab } from "@/components/code-auth/HumanizeTab";
 import { BatchAnalysisTab } from "@/components/code-auth/BatchAnalysisTab";
 import { AboutTab } from "@/components/code-auth/AboutTab";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Shield, Bot, FileSearch, Info } from "lucide-react";
 
 const CodeAuthenticator = () => {
@@ -60,8 +61,8 @@ const CodeAuthenticator = () => {
             </span>
           </motion.div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
-            CodeInspector
+          <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-white">
+            <TextGenerateEffect words="CodeInspector" />
           </h1>
           
           <motion.p 
